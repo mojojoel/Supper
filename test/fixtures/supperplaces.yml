@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  website: MyString
+  crusine: MyString
+  phone: 1
+  open: 2015-06-29 12:11:59
+  close: 2015-06-29 12:11:59
+  state: 1
+
+two:
+  address: MyString
+  website: MyString
+  crusine: MyString
+  phone: 1
+  open: 2015-06-29 12:11:59
+  close: 2015-06-29 12:11:59
+  state: 1

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @supperplace.address %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @supperplace.website %>
+</p>
+
+<p>
+  <strong>Crusine:</strong>
+  <%= @supperplace.crusine %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @supperplace.phone %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @supperplace.state %>
+</p>
+
+<%= link_to 'Edit', edit_supperplace_path(@supperplace) %> |
+<%= link_to 'Back', supperplaces_path %>

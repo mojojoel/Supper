@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supper</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<center><%= link_to 'Supperplaces', supperplaces_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Opening Hours', opening_hours_path %></center>
+</body>
+</html>

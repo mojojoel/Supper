@@ -1,0 +1,2 @@
+module SupperplacesHelper
+end

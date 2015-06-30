@@ -1,0 +1,33 @@
+<%= form_for(@opening_hour) do |f| %>
+  <% if @opening_hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opening_hour.errors.count, "error") %> prohibited this opening_hour from being saved:</h2>
+
+      <ul>
+      <% @opening_hour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opening_time %><br>
+    <%= f.time_select :opening_time %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_time %><br>
+    <%= f.time_select :closing_time %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.number_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :supperplace_id %><br>
+    <%= f.text_field :supperplace_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
