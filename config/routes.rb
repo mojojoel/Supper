@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :supperplaces, :photos, :opening_hours
   #resources :supperplaces do
   #  resources :photos, :opening_hours, shallow: true
