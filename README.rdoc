@@ -1,17 +1,7 @@
 == README
 
-Ruby 2.1.2p95
-Rails 4.1.4
-SQLite
+Ruby 2.1.2p95, Rails 4.1.4, SQLite
 
-
-
-
-
-
-
-
-=========================================================
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

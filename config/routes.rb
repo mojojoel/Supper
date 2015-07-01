@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :supperplaces, :photos, :opening_hours
   #resources :supperplaces do
-  #  resources :photos, shallow: true
+  #  resources :photos, :opening_hours, shallow: true
   #end
 
   # The priority is based upon order of creation: first created -> highest priority.
