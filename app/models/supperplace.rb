@@ -4,7 +4,7 @@ class Supperplace < ActiveRecord::Base
 
   validates :address, presence: true
   validates :crusine, presence: true
-  validates :state, presence: true, inclusion: { in: 1..2 }
+  validates :state, presence: true, inclusion: { in: 0..1 }
   validates :phone, length: { is: 8 }, allow_blank: true
 
 end
