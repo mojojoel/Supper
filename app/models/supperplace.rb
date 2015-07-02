@@ -7,4 +7,6 @@ class Supperplace < ActiveRecord::Base
   validates :state, presence: true, inclusion: { in: 0..1 }
   validates :phone, length: { is: 8 }, allow_blank: true
 
+  enum state: [ :open, :closed ]
+
 end

@@ -13,6 +13,7 @@ ActiveAdmin.register Photo do
     actions
   end
 
+  filter :supperplace_id
   filter :supperplace
   filter :name
   filter :url
