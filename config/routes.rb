@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  #ActiveAdmin routes
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :supperplaces, :photos, :opening_hours
-  #resources :supperplaces do
-  #  resources :photos, :opening_hours, shallow: true
-  #end
 
+  #resources :supperplaces, :photos, :opening_hours
+
+  resources :supperplaces, only: [:index, :show]
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

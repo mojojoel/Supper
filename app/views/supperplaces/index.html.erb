@@ -7,8 +7,6 @@
       <th>Website</th>
       <th>Crusine</th>
       <th>Phone</th>
-<!--      <th>Open</th>
-      <th>Close</th>-->
       <th>State</th>
       <th>Latitude</td>
       <th>Longitude</td>
@@ -23,14 +21,10 @@
         <td><%= supperplace.website %></td>
         <td><%= supperplace.crusine %></td>
         <td><%= supperplace.phone %></td>
-        <td><%#= supperplace.open %></td>
-        <td><%#= supperplace.close %></td>
         <td><%= supperplace.state %></td>
         <td><%= supperplace.latitude %></td>
         <td><%= supperplace.longitude %></td>
         <td><%= link_to 'Show', supperplace %></td>
-        <td><%= link_to 'Edit', edit_supperplace_path(supperplace) %></td>
-        <td><%= link_to 'Destroy', supperplace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +32,3 @@
 
 <br>
 
-<%= link_to 'New Supperplace', new_supperplace_path %>

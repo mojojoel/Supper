@@ -1,5 +1,7 @@
 ActiveAdmin.register Supperplace do
 
+permit_params :address, :website, :crusine, :phone, :state, :latitude, :longitude
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

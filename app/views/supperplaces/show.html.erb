@@ -25,5 +25,14 @@
   <%= @supperplace.state %>
 </p>
 
-<%= link_to 'Edit', edit_supperplace_path(@supperplace) %> |
+<p>
+  <strong>Latitude:</strong>
+  <%= @supperplace.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @supperplace.longitude %>
+</p>
+
 <%= link_to 'Back', supperplaces_path %>
