@@ -1,5 +1,6 @@
 ActiveAdmin.register Photo do
   permit_params :name, :url, :supperplace_id
+  config.per_page = 20
 
   index do
     selectable_column
@@ -7,14 +8,14 @@ ActiveAdmin.register Photo do
     column :name
     column "URL", :url
     column :supperplace
-    column "Supperplace Name" do |x|
-      Supperplace.find(x.supperplace_id).address if x.supperplace_id != nil
-    end
+    #column "Supperplace Name" do |x|
+    #  Supperplace.find(x.supperplace_id).address if x.supperplace_id != nil
+    #end
     actions
   end
 
-  filter :supperplace_id
-  filter :supperplace
+  filter :supperplace_id, label: 'Supperplace ID'
+  filter :supperplace, label: 'Supperplace Name'
   filter :name
   filter :url
 

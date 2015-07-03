@@ -69,6 +69,6 @@ class SupperplacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supperplace_params
-      params.require(:supperplace).permit(:address, :website, :crusine, :phone, :state, :latitude, :longitude)
+      params.require(:supperplace).permit(:name, :address, :website, :crusine, :phone, :state, :latitude, :longitude)
     end
 end
