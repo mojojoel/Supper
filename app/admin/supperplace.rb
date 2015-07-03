@@ -1,5 +1,7 @@
 ActiveAdmin.register Supperplace do
-  permit_params :name, :address, :website, :crusine, :phone, :state, :latitude, :longitude
+  permit_params :name, :address, :website, :crusine, :phone, :state, :latitude, :longitude,
+    photos_attributes: [:id, :name, :url, :supperplace_id, :_destroy],
+      opening_hours_attributes: [:id, :day, :opening_time, :closing_time, :supperplace_id, :_destroy]
   config.per_page = 20
 
   sidebar "Supperplace Details", only: [:show, :edit] do
@@ -33,6 +35,7 @@ ActiveAdmin.register Supperplace do
   filter :longitude
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs "Supperplace Details" do
       f.input :name
       f.input :address
@@ -43,23 +46,21 @@ ActiveAdmin.register Supperplace do
       f.input :latitude
       f.input :longitude
     end
+    f.inputs "Photos" do
+      f.has_many :photos, heading: '', allow_destroy: true do |x|
+        x.input :name
+        x.input :url
+      end
+    end
+    f.inputs "Opening Hours" do
+      f.has_many :opening_hours, heading: '', new_record: 'Add New Opening Hour', allow_destroy: true do |x|
+        x.input :day, as: :select, collection: OpeningHour::DAYS_SELECT
+        x.input :opening_time
+        x.input :closing_time
+      end
+    end
+ 
     f.actions
   end
-
-
-
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
 
 end
