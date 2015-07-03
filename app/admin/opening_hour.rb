@@ -1,4 +1,5 @@
 ActiveAdmin.register OpeningHour do
+  belongs_to :supperplace
   permit_params :day, :opening_time, :closing_time, :supperplace_id
   config.per_page = 20
 
@@ -9,9 +10,6 @@ ActiveAdmin.register OpeningHour do
     column :opening_time
     column :closing_time
     column :supperplace
-    #column "Supperplace Name" do |x|
-    #  Supperplace.find(x.supperplace_id).address if x.supperplace_id != nil
-    #end
     actions
   end
 

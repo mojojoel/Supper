@@ -1,4 +1,5 @@
 ActiveAdmin.register Photo do
+  belongs_to :supperplace
   permit_params :name, :url, :supperplace_id
   config.per_page = 20
 
@@ -8,9 +9,6 @@ ActiveAdmin.register Photo do
     column :name
     column "URL", :url
     column :supperplace
-    #column "Supperplace Name" do |x|
-    #  Supperplace.find(x.supperplace_id).address if x.supperplace_id != nil
-    #end
     actions
   end
 
