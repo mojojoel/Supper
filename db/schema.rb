@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150701203630) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150701203630) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "opening_hours", force: true do |t|
     t.time     "opening_time"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150701203630) do
     t.datetime "updated_at"
   end
 
-  add_index "opening_hours", ["supperplace_id"], name: "index_opening_hours_on_supperplace_id"
+  add_index "opening_hours", ["supperplace_id"], name: "index_opening_hours_on_supperplace_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.string   "name"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150701203630) do
     t.datetime "updated_at"
   end
 
-  add_index "photos", ["supperplace_id"], name: "index_photos_on_supperplace_id"
+  add_index "photos", ["supperplace_id"], name: "index_photos_on_supperplace_id", using: :btree
 
   create_table "supperplaces", force: true do |t|
     t.string   "address"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 20150701203630) do
     t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+    t.decimal  "latitude",   precision: 10, scale: 0
+    t.decimal  "longitude",  precision: 10, scale: 0
   end
 
 end

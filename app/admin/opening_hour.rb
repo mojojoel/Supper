@@ -19,9 +19,9 @@ ActiveAdmin.register OpeningHour do
   form do |f|
     f.inputs "Opening Hours" do
       f.input :supperplace_id, as: :select, collection: Supperplace.all.collect {|s| [s.address, s.id]}
-      f.input :day, as: :select, collection: OpeningHour::DAYS_SELECT
-      f.input :opening_time, ignore_date: :true
-      f.input :closing_time, ignore_date: :true
+      f.input :day, as: :radio, collection: OpeningHour::DAYS_SELECT
+      f.input :opening_time, as: :time_picker, ignore_date: :true
+      f.input :closing_time, as: :time_picker, ignore_date: :true
     end
   f.actions
   end
@@ -38,6 +38,5 @@ ActiveAdmin.register OpeningHour do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
 
 end
