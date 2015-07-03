@@ -22,7 +22,7 @@ ActiveAdmin.register Supperplace do
       link_to supperplace.address, "http://www.google.com/search?q=#{supperplace.address}"
     end
     column :website do |supperplace|
-      link_to supperplace.website, "http://#{supperplace.website}"
+      link_to supperplace.website, "http://#{supperplace.website}" if supperplace.website !=nil
     end
     column :crusine
     column :phone
