@@ -8,9 +8,7 @@ class Supperplace < ActiveRecord::Base
 
   STATE_SELECT = [ 'open', 'closed' ]
 
-  validates :name, presence: true
-  validates :address, presence: true
-  validates :crusine, presence: true
+  validates :name, :address, :crusine, presence: true
   validates :state, presence: true, inclusion: { in: STATE_SELECT }
   validates :phone, length: { is: 8 }, allow_blank: true
 end

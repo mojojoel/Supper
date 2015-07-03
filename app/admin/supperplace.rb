@@ -4,19 +4,26 @@ ActiveAdmin.register Supperplace do
       opening_hours_attributes: [:id, :day, :opening_time, :closing_time, :supperplace_id, :_destroy]
   config.per_page = 20
 
-  sidebar "Supperplace Details", only: [:show, :edit] do
-    ul do
-      li link_to "Photos", admin_supperplace_photos_path(supperplace)
-      li link_to "Opening Hours", admin_supperplace_opening_hours_path(supperplace)
-    end
+  action_item :index, only: :show do
+    link_to 'Photos', admin_supperplace_photos_path(supperplace)
+  end
+  
+  action_item :index, only: :show do
+    link_to 'Opening Hours', admin_supperplace_opening_hours_path(supperplace)
   end
 
   index do
     selectable_column
     id_column
-    column :name
-    column :address
-    column :website
+    column :name do |supperplace|
+      link_to supperplace.name, admin_supperplace_path(supperplace)
+    end
+    column :address do |supperplace|
+      link_to supperplace.address, "http://www.google.com/search?q=#{supperplace.address}"
+    end
+    column :website do |supperplace|
+      link_to supperplace.website, "http://#{supperplace.website}"
+    end
     column :crusine
     column :phone
     column :state
